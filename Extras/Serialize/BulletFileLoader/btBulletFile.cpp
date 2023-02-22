@@ -33,10 +33,21 @@ extern int sBulletDNAlen;
 #endif  //_WIN64
 #else   //BT_INTERNAL_UPDATE_SERIALIZATION_STRUCTURES
 
-extern char sBulletDNAstr64[];
-extern int sBulletDNAlen64;
-extern char sBulletDNAstr[];
-extern int sBulletDNAlen;
+
+#ifdef _WIN32
+#ifdef LinearMath_LIBRARY_EXPORTS
+#define LinearMath_LIBRARY_API __declspec(dllexport)
+#else
+#define LinearMath_LIBRARY_API __declspec(dllimport)
+#endif
+#else
+#define LinearMath_LIBRARY_API
+#endif
+
+extern LinearMath_LIBRARY_API char sBulletDNAstr[];
+extern LinearMath_LIBRARY_API int sBulletDNAlen;
+extern LinearMath_LIBRARY_API char sBulletDNAstr64[];
+extern LinearMath_LIBRARY_API int sBulletDNAlen64;
 
 #endif  //BT_INTERNAL_UPDATE_SERIALIZATION_STRUCTURES
 

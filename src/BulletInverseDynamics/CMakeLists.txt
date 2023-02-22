@@ -28,6 +28,7 @@ SET(BulletInverseDynamics_HDRS
 	${BulletInverseDynamicsDetails_HDRS}
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 ADD_LIBRARY(BulletInverseDynamics ${BulletInverseDynamics_SRCS} ${BulletInverseDynamics_HDRS})
 SET_TARGET_PROPERTIES(BulletInverseDynamics PROPERTIES VERSION ${BULLET_VERSION})

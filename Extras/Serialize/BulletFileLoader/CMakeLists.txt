@@ -18,6 +18,8 @@ bFile.h
 btBulletFile.h
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(BulletFileLoader ${BulletFileLoader_SRCS} ${BulletFileLoader_HDRS})
 
 IF (BUILD_SHARED_LIBS)

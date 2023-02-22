@@ -34,6 +34,8 @@ SET(ConvexDecomposition_HDRS
 	cd_hull.h
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(ConvexDecomposition ${ConvexDecomposition_SRCS} ${ConvexDecomposition_HDRS})
 SET_TARGET_PROPERTIES(ConvexDecomposition PROPERTIES VERSION ${BULLET_VERSION})
 SET_TARGET_PROPERTIES(ConvexDecomposition PROPERTIES SOVERSION ${BULLET_VERSION})

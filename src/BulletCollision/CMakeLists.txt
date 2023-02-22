@@ -252,6 +252,7 @@ SET(BulletCollision_HDRS
 	${NarrowPhaseCollision_HDRS}
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 ADD_LIBRARY(BulletCollision ${BulletCollision_SRCS} ${BulletCollision_HDRS})
 SET_TARGET_PROPERTIES(BulletCollision PROPERTIES VERSION ${BULLET_VERSION})
@@ -260,6 +261,9 @@ IF (BUILD_SHARED_LIBS)
   TARGET_LINK_LIBRARIES(BulletCollision LinearMath)
 ENDIF (BUILD_SHARED_LIBS)
 
+IF (BUILD_SHARED_LIBS)
+	target_compile_definitions(BulletCollision PRIVATE "BulletCollision_LIBRARY_EXPORTS")
+endif()
 
 IF (INSTALL_LIBS)
 	IF (NOT INTERNAL_CREATE_DISTRIBUTABLE_MSVC_PROJECTFILES)

@@ -30,7 +30,19 @@ subject to the following restrictions:
 #define DBVT_BP_ACCURATESLEEPING 0
 #define DBVT_BP_ENABLE_BENCHMARK 0
 //#define DBVT_BP_MARGIN					(btScalar)0.05
-extern btScalar gDbvtMargin;
+
+
+#ifdef _WIN32
+#ifdef BulletCollision_LIBRARY_EXPORTS
+#define BulletCollision_LIBRARY_API __declspec(dllexport)
+#else
+#define BulletCollision_LIBRARY_API __declspec(dllimport)
+#endif
+#else
+#define BulletCollision_LIBRARY_API
+#endif
+
+extern BulletCollision_LIBRARY_API btScalar gDbvtMargin;
 
 #if DBVT_BP_PROFILE
 #define DBVT_BP_PROFILING_RATE 256

@@ -275,6 +275,7 @@ ENDIF()
 
 ADD_DEFINITIONS(-DPHYSICS_SERVER_DIRECT)
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 ADD_LIBRARY(BulletRobotics ${BulletRobotics_SRCS})
 
@@ -283,6 +284,11 @@ SET_TARGET_PROPERTIES(BulletRobotics PROPERTIES SOVERSION ${BULLET_VERSION})
 
 IF (BUILD_SHARED_LIBS)
 	TARGET_LINK_LIBRARIES(BulletRobotics BulletInverseDynamicsUtils BulletWorldImporter BulletFileLoader BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamics LinearMath Bullet3Common)
+
+	IF (MSVC)
+		TARGET_LINK_LIBRARIES(BulletRobotics Ws2_32.lib)
+	ENDIF(MSVC)
+
 ENDIF (BUILD_SHARED_LIBS)
 
   

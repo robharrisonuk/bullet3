@@ -75,7 +75,7 @@ SET(BulletSoftBody_HDRS
 	BulletReducedDeformableBody/btReducedDeformableContactConstraint.h
 )
 
-
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 ADD_LIBRARY(BulletSoftBody  ${BulletSoftBody_SRCS} ${BulletSoftBody_HDRS})
 SET_TARGET_PROPERTIES(BulletSoftBody PROPERTIES VERSION ${BULLET_VERSION})

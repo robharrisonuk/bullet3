@@ -25,8 +25,19 @@ class btCollisionShape;
 class btMotionState;
 class btTypedConstraint;
 
-extern btScalar gDeactivationTime;
-extern bool gDisableDeactivation;
+
+#ifdef _WIN32
+#ifdef BulletDynamics_LIBRARY_EXPORTS
+#define BulletDynamics_LIBRARY_API __declspec(dllexport)
+#else
+#define BulletDynamics_LIBRARY_API __declspec(dllimport)
+#endif
+#else
+#define BulletDynamics_LIBRARY_API
+#endif
+
+extern BulletDynamics_LIBRARY_API btScalar gDeactivationTime;
+extern BulletDynamics_LIBRARY_API bool gDisableDeactivation;
 
 #ifdef BT_USE_DOUBLE_PRECISION
 #define btRigidBodyData btRigidBodyDoubleData

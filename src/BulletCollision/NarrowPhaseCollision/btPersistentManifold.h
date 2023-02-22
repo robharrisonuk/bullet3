@@ -26,8 +26,18 @@ struct btCollisionResult;
 struct btCollisionObjectDoubleData;
 struct btCollisionObjectFloatData;
 
+#ifdef _WIN32
+#ifdef BulletCollision_LIBRARY_EXPORTS
+#define BulletCollision_LIBRARY_API __declspec(dllexport)
+#else
+#define BulletCollision_LIBRARY_API __declspec(dllimport)
+#endif
+#else
+#define BulletCollision_LIBRARY_API
+
+#endif
 ///maximum contact breaking and merging threshold
-extern btScalar gContactBreakingThreshold;
+extern BulletCollision_LIBRARY_API btScalar gContactBreakingThreshold;
 
 #ifndef SWIG
 class btPersistentManifold;

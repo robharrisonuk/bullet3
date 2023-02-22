@@ -1,5 +1,5 @@
 OPTION(BUILD_INVERSE_DYNAMIC_EXTRA "Build InverseDynamic extra module, only applied when BUILD_EXTRAS is ON" ON)
-OPTION(BUILD_BULLET_ROBOTICS_GUI_EXTRA "Build BulletRoboticsGUI extra module, only applied when BUILD_EXTRAS is ON" ON)
+OPTION(BUILD_BULLET_ROBOTICS_GUI_EXTRA "Build BulletRoboticsGUI extra module, only applied when BUILD_EXTRAS is ON" OFF)
 OPTION(BUILD_BULLET_ROBOTICS_EXTRA "Build BulletRobotics extra module, only applied when BUILD_EXTRAS is ON" ON)
 OPTION(BUILD_OBJ2SDF_EXTRA "Build obj2sdf extra module, only applied when BUILD_EXTRAS is ON" ON)
 OPTION(BUILD_SERIALIZE_EXTRA "Build Serialize extra module, only applied when BUILD_EXTRAS is ON" ON)

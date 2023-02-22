@@ -3,6 +3,8 @@ INCLUDE_DIRECTORIES(
 	${BULLET_PHYSICS_SOURCE_DIR}/Extras/Serialize/BulletFileLoader
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(
 BulletWorldImporter
 btMultiBodyWorldImporter.cpp

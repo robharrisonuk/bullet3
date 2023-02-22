@@ -24,10 +24,20 @@ subject to the following restrictions:
 #endif
 #include <string.h>
 
-extern char sBulletDNAstr[];
-extern int sBulletDNAlen;
-extern char sBulletDNAstr64[];
-extern int sBulletDNAlen64;
+#ifdef _WIN32
+#ifdef LinearMath_LIBRARY_EXPORTS
+#define LinearMath_LIBRARY_API __declspec(dllexport)
+#else
+#define LinearMath_LIBRARY_API __declspec(dllimport)
+#endif
+#else
+#define LinearMath_LIBRARY_API
+#endif
+
+extern LinearMath_LIBRARY_API char sBulletDNAstr[];
+extern LinearMath_LIBRARY_API int sBulletDNAlen;
+extern LinearMath_LIBRARY_API char sBulletDNAstr64[];
+extern LinearMath_LIBRARY_API int sBulletDNAlen64;
 
 SIMD_FORCE_INLINE int btStrLen(const char* str)
 {

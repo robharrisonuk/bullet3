@@ -57,6 +57,8 @@ SET(Bullet3Collision_HDRS
 	${Bullet3CollisionNarrowPhase_HDRS}
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(Bullet3Collision ${Bullet3Collision_SRCS} ${Bullet3Collision_HDRS})
 if (BUILD_SHARED_LIBS)
   target_link_libraries(Bullet3Collision Bullet3Geometry)

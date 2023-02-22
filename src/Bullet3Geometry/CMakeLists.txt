@@ -15,6 +15,8 @@ SET(Bullet3Geometry_HDRS
 	b3GrahamScan2dConvexHull.h
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(Bullet3Geometry ${Bullet3Geometry_SRCS} ${Bullet3Geometry_HDRS})
 if (BUILD_SHARED_LIBS)
   target_link_libraries(Bullet3Geometry Bullet3Common)

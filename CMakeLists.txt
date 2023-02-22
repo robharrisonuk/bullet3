@@ -26,7 +26,7 @@ SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 OPTION(USE_DOUBLE_PRECISION "Use double precision"	OFF)
 SET(CLAMP_VELOCITIES "0" CACHE STRING "Clamp rigid bodies' velocity to this value, if larger than zero. Useful to prevent floating point errors or in general runaway velocities in complex scenarios")
 OPTION(USE_GRAPHICAL_BENCHMARK "Use Graphical Benchmark" ON)
-OPTION(BUILD_SHARED_LIBS "Use shared libraries" OFF)
+OPTION(BUILD_SHARED_LIBS "Use shared libraries" ON)
 OPTION(USE_SOFT_BODY_MULTI_BODY_DYNAMICS_WORLD "Use btSoftMultiBodyDynamicsWorld" ON)
 OPTION(USE_OPENVR "Use OpenVR for virtual reality" OFF)
 
@@ -349,8 +349,8 @@ IF(BUILD_PYBULLET)
 	FIND_PACKAGE(PythonLibs ${PYTHON_VERSION_STRING} EXACT)
 ENDIF(BUILD_PYBULLET)
 
-OPTION(BUILD_ENET "Set when you want to build apps with enet UDP networking support" ON)
-OPTION(BUILD_CLSOCKET "Set when you want to build apps with enet TCP networking support" ON)
+OPTION(BUILD_ENET "Set when you want to build apps with enet UDP networking support" OFF)
+OPTION(BUILD_CLSOCKET "Set when you want to build apps with enet TCP networking support" OFF)
 
 
 IF(BUILD_PYBULLET)
@@ -426,7 +426,7 @@ ELSE()
 	ADD_DEFINITIONS(-DNO_OPENGL3)
 ENDIF(BUILD_OPENGL3_DEMOS)
 
-OPTION(BUILD_BULLET2_DEMOS "Set when you want to build the Bullet 2 demos" ON)
+OPTION(BUILD_BULLET2_DEMOS "Set when you want to build the Bullet 2 demos" OFF)
 IF(BUILD_BULLET2_DEMOS)
 
 	IF(EXISTS ${BULLET_PHYSICS_SOURCE_DIR}/examples AND IS_DIRECTORY ${BULLET_PHYSICS_SOURCE_DIR}/examples)
@@ -482,7 +482,7 @@ IF(INSTALL_LIBS)
 ENDIF()
 
 
-OPTION(BUILD_UNIT_TESTS "Build Unit Tests"	ON)
+OPTION(BUILD_UNIT_TESTS "Build Unit Tests"	OFF)
 
 IF (BUILD_UNIT_TESTS)
 	ENABLE_TESTING()

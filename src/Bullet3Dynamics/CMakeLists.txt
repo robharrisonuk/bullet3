@@ -29,6 +29,8 @@ SET(Bullet3Dynamics_HDRS
 	shared/b3IntegrateTransforms.h
 )
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 ADD_LIBRARY(Bullet3Dynamics ${Bullet3Dynamics_SRCS} ${Bullet3Dynamics_HDRS})
 if (BUILD_SHARED_LIBS)
   target_link_libraries(Bullet3Dynamics Bullet3Collision)
